@@ -10,12 +10,12 @@ namespace Vexe.Editor.Types
 		{
 			get
             {
-                var prefs = BetterPrefs.GetEditorInstance();
+                var prefs = BetterPrefsEditor.GetEditorInstance();
                 return prefs.Bools.ValueOrDefault(key);
             }
 			set
 			{
-                var prefs = BetterPrefs.GetEditorInstance();
+                var prefs = BetterPrefsEditor.GetEditorInstance();
 				prefs.Bools[key] = value;
 				EditorUtility.SetDirty(prefs);
 			}

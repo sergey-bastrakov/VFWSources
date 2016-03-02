@@ -80,13 +80,13 @@ namespace Vexe.Editor.Drawers
         protected override void Copy()
         {
             int key = RuntimeHelper.CombineHashCodes(id, "Clip");
-            BetterPrefs.GetEditorInstance().Vector3s[key] = memberValue;
+            BetterPrefsEditor.GetEditorInstance().Vector3s[key] = memberValue;
         }
 
         protected override Vector2 Paste()
         {
             int key = RuntimeHelper.CombineHashCodes(id, "Clip");
-            return BetterPrefs.GetEditorInstance().Vector3s.ValueOrDefault(key, memberValue);
+            return BetterPrefsEditor.GetEditorInstance().Vector3s.ValueOrDefault(key, memberValue);
         }
 
 		protected override Vector2 Randomize() { return new Vector2(rand(), rand()); }
@@ -111,13 +111,13 @@ namespace Vexe.Editor.Drawers
         protected override void Copy()
         {
             int key = RuntimeHelper.CombineHashCodes(id, "Clip");
-            BetterPrefs.GetEditorInstance().Vector3s[key] = memberValue;
+            BetterPrefsEditor.GetEditorInstance().Vector3s[key] = memberValue;
         }
 
         protected override Vector3 Paste()
         {
             int key = RuntimeHelper.CombineHashCodes(id, "Clip");
-            return BetterPrefs.GetEditorInstance().Vector3s.ValueOrDefault(key, memberValue);
+            return BetterPrefsEditor.GetEditorInstance().Vector3s.ValueOrDefault(key, memberValue);
         }
 
 		protected override Vector3 Randomize() { return new Vector3(rand(), rand(), rand()); }

@@ -30,7 +30,7 @@ namespace Vexe.Editor.Drawers
 		private BaseGUI gui;
         private bool isCoroutine;
 
-		private BetterPrefs prefs { get { return BetterPrefs.GetEditorInstance(); } }
+        private BetterPrefs prefs { get { return BetterPrefsEditor.GetEditorInstance(); } }
 
 		private bool foldout
 		{

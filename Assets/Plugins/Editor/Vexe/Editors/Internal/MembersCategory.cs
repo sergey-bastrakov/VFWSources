@@ -12,7 +12,7 @@ namespace Vexe.Editor.Internal
 {
     public class MembersCategory
     {
-        private static readonly BetterPrefs _prefs = BetterPrefs.GetEditorInstance();
+        private static readonly BetterPrefs _prefs = BetterPrefsEditor.GetEditorInstance();
 
         private readonly int _id;
         private CategoryDisplay _display;
