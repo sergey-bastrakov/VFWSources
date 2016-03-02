@@ -119,7 +119,7 @@ namespace Vexe.Editor.Editors
         private void OnEnable()
         {
             if (prefs == null)
-                prefs = BetterPrefs.GetEditorInstance();
+                prefs = BetterPrefsEditor.GetEditorInstance();
 
             if (foldouts == null)
                 foldouts = new Foldouts();
@@ -208,15 +208,15 @@ namespace Vexe.Editor.Editors
 
                 if (EditorGUI.EndChangeCheck())
                 { 
-                    var bb = target as BetterBehaviour;
-                    if (bb != null)
-                        bb.DelayNextDeserialize();
-                    else
-                    { 
-                        var bso = target as BetterScriptableObject;
-                        if (bso != null)
-                        bso.DelayNextDeserialize();
-                    }
+                    //var bb = target as BetterBehaviour;
+                    //if (bb != null)
+                    //    bb.DelayNextDeserialize();
+                    //else
+                    //{ 
+                    //    var bso = target as BetterScriptableObject;
+                    //    if (bso != null)
+                    //    bso.DelayNextDeserialize();
+                    //}
                 }
             }
 

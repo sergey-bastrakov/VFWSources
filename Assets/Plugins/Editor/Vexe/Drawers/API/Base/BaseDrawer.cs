@@ -51,7 +51,7 @@ namespace Vexe.Editor.Drawers
         public BaseDrawer()
         {
             if (prefs == null)
-                prefs = BetterPrefs.GetEditorInstance();
+                prefs = BetterPrefsEditor.GetEditorInstance();
             if (foldouts == null)
                 foldouts = new Foldouts();
         }

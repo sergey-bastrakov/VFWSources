@@ -38,7 +38,7 @@ namespace Vexe.Editor.Drawers
             _id = RuntimeHelper.CombineHashCodes(id, "Filter");
 
             if (_prefs == null)
-                _prefs = BetterPrefs.GetEditorInstance();
+                _prefs = BetterPrefsEditor.GetEditorInstance();
 
             _toggle = _prefs.Bools.ValueOrDefault(this._id, initialToggle);
             _pattern = _prefs.Strings.ValueOrDefault(this._id, "");
