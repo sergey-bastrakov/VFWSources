@@ -36,25 +36,19 @@ namespace Vexe.Runtime.Types
 
         public virtual void OnBeforeSerialize()
         {
-#if UNITY_EDITOR
             if (RuntimeHelper.IsModified(this, Serializer, serializationData))
             {
                 SerializeObject();
             }
-#else
-                SerializeObject();
-#endif
         }
 
         public virtual void OnAfterDeserialize()
         {
-#if UNITY_EDITOR
             if (_delayDeserialize)
             {
                 _delayDeserialize = false;
                 return;
             }
-#endif
             DeserializeObject();
         }
 
@@ -63,7 +57,6 @@ namespace Vexe.Runtime.Types
             RuntimeHelper.ResetTarget(this);
         }
 
-#if UNITY_EDITOR
         // this editor hack is needed to make it possible to let Unity Layout draw things after RabbitGUI.
         // For some reason, if I try to let Unity draw things via obj.Update(), PropertyField(...) and obj.ApplyModifiedProperties(),
         // it will send deserialization requests which will deserialize the behaviour overriding the new changes made in the property
@@ -74,7 +67,6 @@ namespace Vexe.Runtime.Types
         {
             _delayDeserialize = true;
         }
-#endif
 
         public virtual Type GetSerializerType()
         {

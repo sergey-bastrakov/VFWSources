@@ -208,15 +208,15 @@ namespace Vexe.Editor.Editors
 
                 if (EditorGUI.EndChangeCheck())
                 { 
-                    //var bb = target as BetterBehaviour;
-                    //if (bb != null)
-                    //    bb.DelayNextDeserialize();
-                    //else
-                    //{ 
-                    //    var bso = target as BetterScriptableObject;
-                    //    if (bso != null)
-                    //    bso.DelayNextDeserialize();
-                    //}
+                    var bb = target as BetterBehaviour;
+                    if (bb != null)
+                        bb.DelayNextDeserialize();
+                    else
+                    { 
+                        var bso = target as BetterScriptableObject;
+                        if (bso != null)
+                        bso.DelayNextDeserialize();
+                    }
                 }
             }
 
